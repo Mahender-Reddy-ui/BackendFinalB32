@@ -10,7 +10,13 @@ const customerRoutes = require("./routes/customerRoutes");
 dotenv.config();
 
 const app = express();
-app.use(cors({origin:'*'}));
+
+app.use(cors({
+  origin: ['https://frontendfinalb32-omyl.onrender.com'],  // your frontend Render URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
